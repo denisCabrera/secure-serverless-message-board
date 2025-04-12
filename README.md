@@ -2,14 +2,14 @@
 
 This project demonstrates a secure, serverless web app on AWS with layered security.
 
-## 🚀 Overview
+## Overview
 
 - **Frontend/API:** API Gateway + Lambda
 - **Database:** DynamoDB
 - **Security Layers:** WAF, IAM, GuardDuty, CloudTrail, Secrets Manager
 - **Logging & Monitoring:** CloudWatch
 
-## 📌 Features
+## Features
 
 - Submit and retrieve messages via REST API
 - AWS WAF blocks common threats (XSS, SQLi)
@@ -17,7 +17,7 @@ This project demonstrates a secure, serverless web app on AWS with layered secur
 - All activity logged via CloudTrail
 - Threat detection via GuardDuty
 
-## 🧰 Technologies
+## Technologies
 
 | Layer           | Service Used                         |
 |----------------|---------------------------------------|
@@ -27,7 +27,7 @@ This project demonstrates a secure, serverless web app on AWS with layered secur
 | Security       | WAF, IAM, GuardDuty, Secrets Manager |
 | Monitoring     | CloudWatch, CloudTrail               |
 
-## 🛠️ Architecture
+## Architecture
 
 ![Architecture](architecture/architecture-diagram.png)
 
@@ -42,7 +42,7 @@ This project demonstrates a secure, serverless web app on AWS with layered secur
 | `cloudtrail/` | (Optional) Sample logs                 |
 | `guardduty/`  | (Optional) Simulated findings          |
 
-## 🧪 Screenshots
+## Screenshots
 
 ### ✅ Clean request (stored):
 ![Secure POST](images/test_POST.png)
@@ -52,11 +52,3 @@ This project demonstrates a secure, serverless web app on AWS with layered secur
 
 ### 🔒 WAF Log:
 ![WAF Log](images/XSS_waflog.png)
-
-## ✅ Example API Call
-
-```bash
-curl -X POST https://your-api-url.amazonaws.com/prod/messages \
-  -H "Content-Type: application/json" \
-  -d '{"message": "Hello secure world!"}'
-
