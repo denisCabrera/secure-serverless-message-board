@@ -36,13 +36,10 @@ The application allows users to submit and retrieve messages using a RESTful API
 ## Highlights
 
 ### ✅ AWS WAF Blocking XSS Attempt
+
+![WAF XSS Block](images/Simulate_XSS.png)
+
 ![WAF XSS Block](images/XSS_waflog.png)
-
-### ✅ CloudWatch Alarm on Lambda Failures
-![CloudWatch Alarm](screenshots/cloudwatch-alarm.png)
-
-### ✅ GuardDuty Finding: Suspicious Activity
-![GuardDuty](screenshots/guardduty-finding.png)
 
 ---
 
@@ -50,10 +47,10 @@ The application allows users to submit and retrieve messages using a RESTful API
 
 | Step | Screenshot |
 |------|------------|
-| IAM Role Setup | ![IAM Role](screenshots/iam-role.png) |
-| Lambda Configuration | ![Lambda](screenshots/lambda-function.png) |
-| API Gateway Integration | ![API Gateway](screenshots/api-gateway.png) |
-| CloudTrail Audit Log | ![CloudTrail](screenshots/cloudtrail-log.png) |
+| IAM Role Setup | ![IAM Role](images/IAM_Role_Policy.png) |
+| Lambda Configuration | ![Lambda](images/Lambda_createMessage.png) ![Lambda](images/lambda_getMessages.png)|
+| API Gateway Integration | ![API Gateway](images/Rest_API.png) |
+| CloudTrail Audit Log | ![CloudTrail](images/wafLOG_s3.png) |
 
 ---
 
@@ -91,7 +88,7 @@ curl https://<api-id>.execute-api.<region>.amazonaws.com/prod/messages
 
 ---
 
-## 🎯 Outcome
+## Outcome
 
 This project demonstrates how to build and secure a cloud-native, serverless API using AWS tools and services. It reflects security-first design thinking and operational awareness for logging, access control, and monitoring.
 
