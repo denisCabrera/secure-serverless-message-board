@@ -36,8 +36,6 @@ The application allows users to submit and retrieve messages using a RESTful API
 
 ### ✅ AWS WAF Blocking XSS Attempt
 
-![WAF XSS Block](images/Simulate_XSS.png)
-
 ![WAF XSS Block](images/XSS_waflog.png)
 
 ---
@@ -62,6 +60,8 @@ curl -X POST https://<api-id>.execute-api.<region>.amazonaws.com/prod/messages \
 -d '{"message":"Hello secure world!"}'
 ```
 
+![Test Post](images/test_POST.png)
+
 ### Retrieve messages:
 ```bash
 curl https://<api-id>.execute-api.<region>.amazonaws.com/prod/messages
@@ -71,6 +71,7 @@ curl https://<api-id>.execute-api.<region>.amazonaws.com/prod/messages
 ```json
 { "message": "<script>alert('xss')</script>" }
 ```
+![WAF XSS Simulation](images/Simulate_XSS.png)
 
 ---
 
