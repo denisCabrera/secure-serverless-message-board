@@ -17,7 +17,6 @@ The application allows users to submit and retrieve messages using a RESTful API
 - **Amazon DynamoDB** – NoSQL storage for messages
 - **AWS WAF** – Protects API from XSS, SQLi, and bad inputs
 - **IAM** – Least privilege role for Lambda execution
-- **AWS Secrets Manager** – Mock use for secure variable handling
 - **Amazon CloudWatch** – Logs and alarms
 - **AWS CloudTrail** – Account activity auditing
 - **Amazon GuardDuty** – Threat detection and monitoring
@@ -28,7 +27,7 @@ The application allows users to submit and retrieve messages using a RESTful API
 
 - [`lambda/createMessage.py`](lambda/createMessage.py)
 - [`lambda/getMessages.py`](lambda/getMessages.py)
-- IAM role created via Visual Editor (DynamoDB, Secrets Manager, CloudWatch Logs)
+- IAM role policy [`lambda-execution-policy.json`](iam/lambda-execution-policy.json)
 - Policy attached to: `MessageBoardLambdaRole`
 
 ---
