@@ -89,7 +89,6 @@ curl https://<api-id>.execute-api.<region>.amazonaws.com/prod/messages
 - Using **AWS WAF** to mitigate common web attacks like XSS and SQL injection
 - Enabling **monitoring** with CloudWatch and alert creation
 - Logging and tracking user activity with **CloudTrail**
-- Activating and reviewing **GuardDuty** for real-time threat intel
 - Simulating attacks and verifying block results via logs and dashboards
 - Structuring a complete AWS security project for a real-world portfolio
 
