@@ -10,6 +10,13 @@ The application allows users to submit and retrieve messages using a RESTful API
 
 ---
 
+## Architecture Overview
+
+![ProjectDiagram](images/SecureServerlessDiagram.jpg)
+
+
+---
+
 ## Services Used
 
 - **Amazon API Gateway** – Entry point for the REST API
