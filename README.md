@@ -1,54 +1,98 @@
-# Secure Serverless Message Board
+# Secure Serverless Message Board (AWS)
 
-This project demonstrates a secure, serverless web app on AWS with layered security.
+This project showcases a secure, serverless REST API built using core AWS services with a strong emphasis on identity, monitoring, logging, and protection against common web threats. It was created in a Pluralsight AWS sandbox environment for hands-on practice and cloud security portfolio development.
 
-## Overview
+---
 
-- **Frontend/API:** API Gateway + Lambda
-- **Database:** DynamoDB
-- **Security Layers:** WAF, IAM, GuardDuty, CloudTrail
-- **Logging & Monitoring:** CloudWatch
+## Summary
 
-## Features
+The application allows users to submit and retrieve messages using a RESTful API. These messages are stored in DynamoDB and protected by a layered architecture involving WAF, IAM, CloudTrail, GuardDuty, and more. The infrastructure was manually deployed using the AWS Console.
 
-- Submit and retrieve messages via REST API
-- AWS WAF blocks common threats (XSS, SQLi)
-- Fine-grained IAM permissions
-- All activity logged via CloudTrail
-- Threat detection via GuardDuty
+---
 
-## Technologies
+## Services Used
 
-| Layer           | Service Used                         |
-|----------------|---------------------------------------|
-| API            | API Gateway                          |
-| Backend        | AWS Lambda (Python)                  |
-| Database       | DynamoDB                             |
-| Security       | WAF, IAM, GuardDuty,                 |
-| Monitoring     | CloudWatch, CloudTrail               |
+- **Amazon API Gateway** – Entry point for the REST API
+- **AWS Lambda** – Serverless compute to process messages
+- **Amazon DynamoDB** – NoSQL storage for messages
+- **AWS WAF** – Protects API from XSS, SQLi, and bad inputs
+- **IAM** – Least privilege role for Lambda execution
+- **AWS Secrets Manager** – Mock use for secure variable handling
+- **Amazon CloudWatch** – Logs and alarms
+- **AWS CloudTrail** – Account activity auditing
+- **Amazon GuardDuty** – Threat detection and monitoring
 
-## Architecture
+---
 
-![Architecture](architecture/architecture-diagram.png)
+## Key Project Files
 
-## 📂 Folder Structure
+- [`lambda/createMessage.py`](lambda/createMessage.py)
+- [`lambda/getMessages.py`](lambda/getMessages.py)
+- IAM role created via Visual Editor (DynamoDB, Secrets Manager, CloudWatch Logs)
+- Policy attached to: `MessageBoardLambdaRole`
 
-| Folder        | Description                            |
-|---------------|----------------------------------------|
-| `lambda/`     | Lambda function code                   |
-| `iam/`        | IAM policy for Lambda                  |
-| `waf/`        | WAF WebACL setup                       |
-| `images/`     | Screenshots of demo, WAF logs          |
-| `cloudtrail/` | (Optional) Sample logs                 |
-| `guardduty/`  | (Optional) Simulated findings          |
+---
 
-## Screenshots
+## Highlights
 
-### ✅ Clean request (stored):
-![Secure POST](images/test_POST.png)
+### ✅ AWS WAF Blocking XSS Attempt
+![WAF XSS Block](images/XSS_waflog.png)
 
-### ❌ XSS attack (blocked):
-![Blocked XSS](images/Simulate_XSS.png)
+### ✅ CloudWatch Alarm on Lambda Failures
+![CloudWatch Alarm](screenshots/cloudwatch-alarm.png)
 
-### 🔒 WAF Log:
-![WAF Log](images/XSS_waflog.png)
+### ✅ GuardDuty Finding: Suspicious Activity
+![GuardDuty](screenshots/guardduty-finding.png)
+
+---
+
+## Additional Screenshots
+
+| Step | Screenshot |
+|------|------------|
+| IAM Role Setup | ![IAM Role](screenshots/iam-role.png) |
+| Lambda Configuration | ![Lambda](screenshots/lambda-function.png) |
+| API Gateway Integration | ![API Gateway](screenshots/api-gateway.png) |
+| CloudTrail Audit Log | ![CloudTrail](screenshots/cloudtrail-log.png) |
+
+---
+
+## Testing Examples
+
+### Submit a message:
+```bash
+curl -X POST https://<api-id>.execute-api.<region>.amazonaws.com/prod/messages \
+-H "Content-Type: application/json" \
+-d '{"message":"Hello secure world!"}'
+```
+
+### Retrieve messages:
+```bash
+curl https://<api-id>.execute-api.<region>.amazonaws.com/prod/messages
+```
+
+### Simulate XSS Attack (Blocked by WAF):
+```json
+{ "message": "<script>alert('xss')</script>" }
+```
+
+---
+
+## What I Learned
+
+- How to apply **least privilege IAM** principles using roles and policies
+- Setting up and integrating **API Gateway**, **Lambda**, and **DynamoDB**
+- Using **AWS WAF** to mitigate common web attacks like XSS and SQL injection
+- Enabling **monitoring** with CloudWatch and alert creation
+- Logging and tracking user activity with **CloudTrail**
+- Activating and reviewing **GuardDuty** for real-time threat intel
+- Simulating attacks and verifying block results via logs and dashboards
+- Structuring a complete AWS security project for a real-world portfolio
+
+---
+
+## 🎯 Outcome
+
+This project demonstrates how to build and secure a cloud-native, serverless API using AWS tools and services. It reflects security-first design thinking and operational awareness for logging, access control, and monitoring.
+
+---
