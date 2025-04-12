@@ -6,7 +6,7 @@ This project demonstrates a secure, serverless web app on AWS with layered secur
 
 - **Frontend/API:** API Gateway + Lambda
 - **Database:** DynamoDB
-- **Security Layers:** WAF, IAM, GuardDuty, CloudTrail, Secrets Manager
+- **Security Layers:** WAF, IAM, GuardDuty, CloudTrail
 - **Logging & Monitoring:** CloudWatch
 
 ## Features
@@ -24,7 +24,7 @@ This project demonstrates a secure, serverless web app on AWS with layered secur
 | API            | API Gateway                          |
 | Backend        | AWS Lambda (Node.js)                 |
 | Database       | DynamoDB                             |
-| Security       | WAF, IAM, GuardDuty, Secrets Manager |
+| Security       | WAF, IAM, GuardDuty,                 |
 | Monitoring     | CloudWatch, CloudTrail               |
 
 ## Architecture
