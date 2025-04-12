@@ -49,7 +49,7 @@ The application allows users to submit and retrieve messages using a RESTful API
 | IAM Role Setup | ![IAM Role](images/IAM_Role_Policy.png) |
 | Lambda Configuration | ![Lambda](images/Lambda_createMessage.png) ![Lambda](images/lambda_getMessages.png)|
 | API Gateway Integration | ![API Gateway](images/Rest_API.png) |
-| CloudTrail Audit Log | ![CloudTrail](images/wafLOG_s3.png) |
+| CloudTrail Audit Log | ![CloudTrail](images/wafLOG_s3bucket.png) |
 
 ---
 
