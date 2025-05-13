@@ -1,6 +1,6 @@
 # Secure Serverless Message Board (AWS)
 
-This project showcases a secure, serverless REST API built using core AWS services with a strong emphasis on identity, monitoring, logging, and protection against common web threats. It was created in a Pluralsight AWS sandbox environment for hands-on practice and cloud security portfolio development.
+This project showcases a secure, serverless REST API built using core AWS services with a strong emphasis on identity, monitoring, logging, and protection against common web threats. It was created in an AWS sandbox environment for hands-on practice and cloud security portfolio development.
 
 ---
 
